@@ -3,6 +3,6 @@ class AgendaDeleteMailer < ApplicationMailer
     @member_email = member_email
     @title = title
 
-    mail to: @member_email.join(","), subject: "アジェンダ[#{@title}]が削除されました。"
+    mail to: @member_email.uniq.join(","), subject: "アジェンダ[#{@title}]が削除されました。"
   end
 end
