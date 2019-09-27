@@ -15,7 +15,11 @@ class TeamsController < ApplicationController
     @team = Team.new
   end
 
-  def edit; end
+  # def edit; end
+def edit
+  puts "*****************************"
+  return
+end
 
   def create
     @team = Team.new(team_params)
