@@ -58,7 +58,7 @@
                             <%= form.hidden_field :name %>
                             <%= form.hidden_field :icon %>
                             <%= form.hidden_field :icon_cache %>
-                            <%= form.hidden_field :owner_id, value: assign.id %>
+                            <%= form.hidden_field :owner_id, value: assign.user.id %>
                             <%= form.submit '権限移動', class: 'btn btn-sm btn-info' %>
                           <% end %>
                         <% end %>
