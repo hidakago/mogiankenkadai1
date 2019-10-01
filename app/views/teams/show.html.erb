@@ -54,13 +54,7 @@
                       </td>
                       <td>
                         <% if ( current_user.id == assign.team.owner.id ) && ( current_user.id != assign.user.id ) %>
-                          <%= form_with model: @team, local: true, url: changeowner_team_path do |form| %>
-                            <%= form.hidden_field :name %>
-                            <%= form.hidden_field :icon %>
-                            <%= form.hidden_field :icon_cache %>
-                            <%= form.hidden_field :owner_id, value: assign.user.id %>
-                            <%= form.submit '権限移動', class: 'btn btn-sm btn-info' %>
-                          <% end %>
+                          <%= link_to '権限移動', changeowner_team_path(@team.id, assign: assign ), method: :patch, class: 'btn btn-sm btn-info' %>
                         <% end %>
                       </td>
                     </tr>
